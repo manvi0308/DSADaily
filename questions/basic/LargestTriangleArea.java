@@ -1,3 +1,5 @@
+package basic;
+
 public class LargestTriangleArea {
     /*
         Formula: The area of a triangle with vertices is

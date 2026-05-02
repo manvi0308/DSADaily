@@ -1,3 +1,5 @@
+package basic;
+
 public class SearchInRotatedSortedArray {
     public static boolean search(int[] nums, int target){
         int low = 0;

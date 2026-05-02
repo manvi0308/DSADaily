@@ -1,3 +1,5 @@
+package basic;
+
 public class MaximumProductSubArray{
     static int maxProduct(int[] nums){
         if (nums.length == 0)

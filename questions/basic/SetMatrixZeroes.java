@@ -1,3 +1,5 @@
+package basic;
+
 public class SetMatrixZeroes {
     /*
     Given an m x n integer matrix matrix, if an element is 0,
