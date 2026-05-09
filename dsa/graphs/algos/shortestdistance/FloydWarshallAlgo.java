@@ -1,4 +1,4 @@
-package graphs.algos;
+package graphs.algos.shortestdistance;
 
 public class FloydWarshallAlgo {
     public void shortestDistance(int[][] matrix){

@@ -1,4 +1,4 @@
-package graphs.algos;
+package graphs.algos.shortestdistance;
 
 import java.util.Arrays;
 import java.util.List;
