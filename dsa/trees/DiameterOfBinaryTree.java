@@ -1,18 +1,12 @@
 package trees;
 
-public class DiameterOfBinaryTree {
-    class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
+public class DiameterOfBinaryTree extends TreeNode {
     int diameter = 0;
+
+    public DiameterOfBinaryTree(int val) {
+        super(val);
+    }
+
     public int height(TreeNode root){
         // helper function to return height of binary tree
         if (root == null)

@@ -13,35 +13,32 @@ public class WordLadder {
         }
     }
     public  int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> set = new HashSet<>();
         Queue<Pair> queue = new LinkedList<>();
-        for (String s: wordList){
-            set.add(s); // for O(1) lookups
+        HashSet<String> set = new HashSet<>();
+        for(int i = 0; i < wordList.size(); i++) {
+            set.add(wordList.get(i));
         }
-        if(!set.contains(beginWord))
-            return -1;
-        // initial setup
         queue.add(new Pair(beginWord, 1));
+        set.remove(beginWord);
+        while(!queue.isEmpty()) {
+            Pair pair = queue.poll();
+            String word = pair.word;
+            if(word.equals(endWord))
+                return pair.transformations;
+            // in the current word, we will try for each letter/char of word
+            // with every possible char and check if its a valid word as per wordList.
 
-        while (!queue.isEmpty()){
-            Pair currPair = queue.peek();
-            String currWord = currPair.word;
-            int transformations = currPair.transformations;
-            if (currWord.equals(endWord))
-                return transformations;
-            for (int i = 0; i < currWord.length(); i++){
-                for(char ch = 'a'; ch <= 'z'; ch+=1){
-                    char[] charArray = currWord.toCharArray();
-                    charArray[i] = ch;
-                    String newWord = new String(charArray);
-
-                    if (set.contains(newWord)){
-                        set.remove(newWord);
-                        queue.add(new Pair(newWord, transformations + 1));
+            for(int i = 0; i < word.length(); i++) {
+                for(char ch = 'a'; ch <= 'z'; ch++) {
+                    char[] repCharArray = word.toCharArray();
+                    repCharArray[i] = ch;
+                    String repWord = new String(repCharArray);
+                    if(set.contains(repWord)) {
+                        set.remove(repWord);
+                        queue.add(new Pair(repWord, pair.transformations+1));
                     }
                 }
             }
-
         }
         return 0;
     }

@@ -25,7 +25,7 @@ public class RottenOranges {
        if (countFresh == 0)
            return 0;
        int[] xdir = {-1, 1, 0, 0};
-       int[] ydir = {0, 0, +1, -1};
+       int[] ydir = {0, 0, 1, -1};
        int count = 0;
        while (!queue.isEmpty()){
            int size = queue.size();
